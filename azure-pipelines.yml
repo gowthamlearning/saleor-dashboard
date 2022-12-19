@@ -3,14 +3,14 @@ trigger:
   - main
 pool: self
 stages:
-  - stage: image-build
+  - stage: image_build
     jobs:
-      - job: dcoker image build
+      - job: dcoker_image_build
         steps:
           - script: docker image build -t gowthi1404/saleor-dashboard:dev-19122022 .
-  - stage: push-image
+  - stage: push_image
     jobs:
-      - job:
+      - job: docker_image_push
         steps:
           - script: docker image push gowthi1404/saleor-dashboard:dev-19122022
     
